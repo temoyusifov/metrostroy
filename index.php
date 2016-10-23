@@ -3,8 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-//print_r($_SERVER['REQUEST_URI']);
-
 // Назначаем модуль и действие по умолчанию.
 $class = 'home';
 $method = 'main';
@@ -40,17 +38,25 @@ if ($_SERVER['REQUEST_URI'] != '/') {
             $params[$uri_parts[$i]] = $uri_parts[++$i];
         }
     } catch (Exception $e) {
-        $class = 'blank';
+        $class = 'Page404';
         $method = 'main';
     }
 }
 
-echo "Class: $class <br />";
-echo "Method: $method<br />";
-
+//echo "Class: $class <br />";
+//echo "Method: $method<br />";
 print_r($params);
 
 
-include './controllers/'.$class.'Controller.php';
-$object = new $class;
-$object->$method();
+// HERE HAPPEN CALLING CLASS AND METHOD
+
+$file_path = $_SERVER['DOCUMENT_ROOT']."/controllers/".$class."Controller.php";
+
+if(file_exists($file_path)){
+    include './controllers/'.$class.'Controller.php';
+    $object = new $class;
+    $object->$method();
+}else{
+    echo "<div style='display: block; width: 50%; border: 1px solid #f7dbdb; padding: 10px; margin: 0 auto; text-align: center; border-radius:6px;'>Page not found. </div><br />";
+    exit;
+}

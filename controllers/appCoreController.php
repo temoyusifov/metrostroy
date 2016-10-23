@@ -13,12 +13,6 @@
 
         public static function view($view_name, array $array = null){
 
-            /*if(!empty($array)){
-                foreach($array as $key => $value){
-                    $$key = $value;
-                }
-            }*/
-
             $file_path = $_SERVER['DOCUMENT_ROOT']."/views/$view_name.php";
 
             if(file_exists($file_path))
