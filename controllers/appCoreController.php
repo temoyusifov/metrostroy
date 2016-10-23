@@ -3,13 +3,8 @@
 
     namespace coreControllers;
 
-    class Route{
 
-        
-
-    }
-
-    class ApplicationCoreController{
+    class AppCoreController{
 
         public $load;
 

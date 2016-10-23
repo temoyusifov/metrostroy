@@ -4,11 +4,11 @@
 
     //use coreControllers;
 
-    class Blank extends coreControllers\ApplicationCoreController{
+    class Blank extends coreControllers\AppCoreController{
 
         public function main(){
 
-            echo 'This is blank controller where page not found.';
+            $this->load->view('404');
 
         }
 

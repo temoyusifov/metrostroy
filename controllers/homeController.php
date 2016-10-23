@@ -4,7 +4,7 @@
 
     //use coreControllers;
 
-    class Home extends coreControllers\ApplicationCoreController{
+    class Home extends coreControllers\AppCoreController{
 
         public function main(){
 
@@ -22,7 +22,7 @@
             $usersObject = $this->usersModel->getUsers(); // returns object
 
             
-            $this->load->view('welcome', $languages);
+            //$this->load->view('welcome', $languages);
            // $this->load->view('welcome2', $languages);
            // $this->load->view('welcome3', $languages);
 
