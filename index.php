@@ -47,9 +47,6 @@ if ($_SERVER['REQUEST_URI'] != '/') {
     }
 }
 
-echo '<pre>';
-   // print_r($params);
-echo '</pre>';
 
 echo "\$module: $class\n<br />";
 echo "\$action: $method\n<br />";

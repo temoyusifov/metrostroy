@@ -22,7 +22,7 @@
             $usersObject = $this->usersModel->getUsers(); // returns object
 
             
-           // $this->load->view('welcome', $languages);
+            $this->load->view('welcome', $languages);
            // $this->load->view('welcome2', $languages);
            // $this->load->view('welcome3', $languages);
 

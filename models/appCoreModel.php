@@ -5,7 +5,7 @@
 
     class DB{
 
-        private $db = 'cms';
+        private $db = 'metrostroy';
         private $dbUser = 'db_user';
         private $dbUserPass = 'db_user_pass';
         private static $_instance = null;
@@ -88,23 +88,18 @@
 
             $sql = "SELECT $rows FROM $table $where $orderBy $limit"; // GENERATED SELECT QUERY
 
-           // echo $sql;
 
+            // Execute generated query
             $getInstance = $this->getInstance;
             $connection = $getInstance->getConnection();
             $query = $connection->prepare($sql);
 
             if($query->execute()){
-                return $query->fetchObject();
+                return $query->fetchObject(); // Return to controller executed query.
             }
             else
-                echo 'fuck';
+                echo 'Fuck...';
 
-          //$query->execute();
-          //  var_dump($this->connection);
-
-
-            //echo $sql;
 
         }
 
