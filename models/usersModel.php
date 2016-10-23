@@ -18,7 +18,7 @@
             //$result = $this->db->select('users', null, $where, $orderBy);
 
 
-            var_dump( $result);
+            var_dump( $result );
 
 
             /*$this->select('username, password')->
