@@ -25,8 +25,6 @@ if ($_SERVER['REQUEST_URI'] != '/') {
         $uri_parts = explode('/', trim($url_path, ' /'));
 
 
-        print_r($uri_parts);
-
         // Если количество частей не кратно 2, значит, в URL присутствует ошибка и такой URL
         // обрабатывать не нужно - кидаем исключение, что бы назначить в блоке catch модуль и действие,
         // отвечающие за показ 404 страницы.
@@ -47,9 +45,10 @@ if ($_SERVER['REQUEST_URI'] != '/') {
     }
 }
 
+echo "Class: $class <br />";
+echo "Method: $method<br />";
 
-echo "\$module: $class\n<br />";
-echo "\$action: $method\n<br />";
+print_r($params);
 
 
 include './controllers/'.$class.'Controller.php';
