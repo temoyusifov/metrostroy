@@ -1,12 +1,11 @@
 <?php
 
     include 'appCoreController.php';
+    use coreControllers as core;
 
-    //use coreControllers;
+    class Home extends core\AppCoreController{
 
-    class Home extends coreControllers\AppCoreController{
-
-        // IF CALLED METHOD THAT NOT EXISTS
+        // IF THE CALLED METHOD WHICH NOT EXISTS
         public function __call($methodName, $methodArguments){
             $this->load->view('404');
         }

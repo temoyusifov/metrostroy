@@ -3,7 +3,6 @@
 
     namespace coreControllers;
 
-
     class AppCoreController{
 
         public $load;
